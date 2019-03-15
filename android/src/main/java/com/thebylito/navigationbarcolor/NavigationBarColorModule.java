@@ -108,7 +108,10 @@ public class NavigationBarColorModule extends ReactContextBaseJavaModule {
                         }
 
                     } else {
-                        promise.reject("NOT_SUPPORTED", new Throwable("Not Supported"));
+                        // promise.reject("NOT_SUPPORTED", new Throwable("Not Supported"));
+                        WritableMap map = Arguments.createMap();
+                       map.putBoolean("success", true);
+                       promise.resolve(map);
                     }
                 }
             });
